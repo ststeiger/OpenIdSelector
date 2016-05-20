@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4116D01B-47DE-4299-97A4-CBDD065CEF5A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenIdSelector</RootNamespace>
+    <AssemblyName>OpenIdSelector</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Archive\branches\1.0-mootools\css\openid.css" />
+    <Content Include="Archive\branches\1.0-mootools\demo.html" />
+    <Content Include="Archive\branches\1.0-mootools\images\aol.gif" />
+    <Content Include="Archive\branches\1.0-mootools\images\blogger.ico" />
+    <Content Include="Archive\branches\1.0-mootools\images\claimid.ico" />
+    <Content Include="Archive\branches\1.0-mootools\images\facebook.gif" />
+    <Content Include="Archive\branches\1.0-mootools\images\flickr.ico" />
+    <Content Include="Archive\branches\1.0-mootools\images\google.gif" />
+    <Content Include="Archive\branches\1.0-mootools\images\livejournal.ico" />
+    <Content Include="Archive\branches\1.0-mootools\images\myopenid.ico" />
+    <Content Include="Archive\branches\1.0-mootools\images\openid-inputicon.gif" />
+    <Content Include="Archive\branches\1.0-mootools\images\openid.gif" />
+    <Content Include="Archive\branches\1.0-mootools\images\technorati.ico" />
+    <Content Include="Archive\branches\1.0-mootools\images\verisign.ico" />
+    <Content Include="Archive\branches\1.0-mootools\images\vidoop.ico" />
+    <Content Include="Archive\branches\1.0-mootools\images\wordpress.ico" />
+    <Content Include="Archive\branches\1.0-mootools\images\yahoo.gif" />
+    <Content Include="Archive\branches\1.0-mootools\js\mootools-core.js" />
+    <Content Include="Archive\branches\1.0-mootools\js\mootools-more.js" />
+    <Content Include="Archive\branches\1.0-mootools\js\openid-mootools.js" />
+    <Content Include="Archive\branches\1.0\css\openid.css" />
+    <Content Include="Archive\branches\1.0\demo.html" />
+    <Content Include="Archive\branches\1.0\images\aol.gif" />
+    <Content Include="Archive\branches\1.0\images\blogger.ico" />
+    <Content Include="Archive\branches\1.0\images\claimid.ico" />
+    <Content Include="Archive\branches\1.0\images\facebook.gif" />
+    <Content Include="Archive\branches\1.0\images\flickr.ico" />
+    <Content Include="Archive\branches\1.0\images\google.gif" />
+    <Content Include="Archive\branches\1.0\images\livejournal.ico" />
+    <Content Include="Archive\branches\1.0\images\myopenid.ico" />
+    <Content Include="Archive\branches\1.0\images\openid-inputicon.gif" />
+    <Content Include="Archive\branches\1.0\images\openid.gif" />
+    <Content Include="Archive\branches\1.0\images\technorati.ico" />
+    <Content Include="Archive\branches\1.0\images\verisign.ico" />
+    <Content Include="Archive\branches\1.0\images\vidoop.ico" />
+    <Content Include="Archive\branches\1.0\images\wordpress.ico" />
+    <Content Include="Archive\branches\1.0\images\yahoo.gif" />
+    <Content Include="Archive\branches\1.0\js\jquery-1.2.6.min.js" />
+    <Content Include="Archive\branches\1.0\js\openid-jquery.js" />
+    <Content Include="Archive\branches\1.1\css\openid.css" />
+    <Content Include="Archive\branches\1.1\demo.html" />
+    <Content Include="Archive\branches\1.1\images\aol.gif" />
+    <Content Include="Archive\branches\1.1\images\blogger.ico" />
+    <Content Include="Archive\branches\1.1\images\blogger.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\claimid.ico" />
+    <Content Include="Archive\branches\1.1\images\claimid.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\clickpass.ico" />
+    <Content Include="Archive\branches\1.1\images\clickpass.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\facebook.gif" />
+    <Content Include="Archive\branches\1.1\images\flickr.ico" />
+    <Content Include="Archive\branches\1.1\images\flickr.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\google.gif" />
+    <Content Include="Archive\branches\1.1\images\google_profile.ico" />
+    <Content Include="Archive\branches\1.1\images\google_profile.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\launchpad.ico" />
+    <Content Include="Archive\branches\1.1\images\launchpad.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\livejournal.ico" />
+    <Content Include="Archive\branches\1.1\images\livejournal.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\myopenid.gif" />
+    <Content Include="Archive\branches\1.1\images\myopenid.ico" />
+    <Content Include="Archive\branches\1.1\images\myopenid.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\openid-inputicon.gif" />
+    <Content Include="Archive\branches\1.1\images\openid.gif" />
+    <Content Include="Archive\branches\1.1\images\technorati.ico" />
+    <Content Include="Archive\branches\1.1\images\technorati.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\verisign.gif" />
+    <Content Include="Archive\branches\1.1\images\verisign.ico" />
+    <Content Include="Archive\branches\1.1\images\verisign.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\vidoop.ico" />
+    <Content Include="Archive\branches\1.1\images\vidoop.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\wordpress.ico" />
+    <Content Include="Archive\branches\1.1\images\wordpress.ico.gif" />
+    <Content Include="Archive\branches\1.1\images\yahoo.gif" />
+    <Content Include="Archive\branches\1.1\js\jquery-1.2.6.min.js" />
+    <Content Include="Archive\branches\1.1\js\openid-jquery.js" />
+    <Content Include="Archive\branches\1.2\css\openid.css" />
+    <Content Include="Archive\branches\1.2\demo-ru.html" />
+    <Content Include="Archive\branches\1.2\demo-uk.html" />
+    <Content Include="Archive\branches\1.2\demo.html" />
+    <Content Include="Archive\branches\1.2\generate-sprite.js" />
+    <Content Include="Archive\branches\1.2\images.large\aol.gif" />
+    <Content Include="Archive\branches\1.2\images.large\facebook.gif" />
+    <Content Include="Archive\branches\1.2\images.large\google.gif" />
+    <Content Include="Archive\branches\1.2\images.large\myopenid.gif" />
+    <Content Include="Archive\branches\1.2\images.large\openid.gif" />
+    <Content Include="Archive\branches\1.2\images.large\rambler.gif" />
+    <Content Include="Archive\branches\1.2\images.large\verisign.gif" />
+    <Content Include="Archive\branches\1.2\images.large\yahoo.gif" />
+    <Content Include="Archive\branches\1.2\images.large\yandex.gif" />
+    <Content Include="Archive\branches\1.2\images.small\aol.ico" />
+    <Content Include="Archive\branches\1.2\images.small\aol.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\aol.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\blogger.ico" />
+    <Content Include="Archive\branches\1.2\images.small\blogger.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\blogger.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\claimid.ico" />
+    <Content Include="Archive\branches\1.2\images.small\claimid.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\claimid.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\clickpass.ico" />
+    <Content Include="Archive\branches\1.2\images.small\clickpass.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\clickpass.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\facebook.ico" />
+    <Content Include="Archive\branches\1.2\images.small\facebook.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\facebook.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\flickr.ico" />
+    <Content Include="Archive\branches\1.2\images.small\flickr.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\flickr.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\google.ico" />
+    <Content Include="Archive\branches\1.2\images.small\google.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\google.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\google_profile.ico" />
+    <Content Include="Archive\branches\1.2\images.small\google_profile.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\google_profile.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\launchpad.ico" />
+    <Content Include="Archive\branches\1.2\images.small\launchpad.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\launchpad.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\linkedin.ico" />
+    <Content Include="Archive\branches\1.2\images.small\linkedin.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\linkedin.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\livejournal.ico" />
+    <Content Include="Archive\branches\1.2\images.small\livejournal.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\livejournal.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\myopenid.ico" />
+    <Content Include="Archive\branches\1.2\images.small\myopenid.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\myopenid.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\openid.ico" />
+    <Content Include="Archive\branches\1.2\images.small\openid.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\openid.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\rambler.ico" />
+    <Content Include="Archive\branches\1.2\images.small\rambler.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\rambler.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\technorati.ico" />
+    <Content Include="Archive\branches\1.2\images.small\technorati.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\technorati.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\twitter.ico" />
+    <Content Include="Archive\branches\1.2\images.small\twitter.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\twitter.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\verisign.ico" />
+    <Content Include="Archive\branches\1.2\images.small\verisign.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\verisign.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\vidoop.ico" />
+    <Content Include="Archive\branches\1.2\images.small\vidoop.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\vidoop.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\wordpress.ico" />
+    <Content Include="Archive\branches\1.2\images.small\wordpress.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\wordpress.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\yahoo.ico" />
+    <Content Include="Archive\branches\1.2\images.small\yahoo.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\yahoo.ico.png" />
+    <Content Include="Archive\branches\1.2\images.small\yandex.ico" />
+    <Content Include="Archive\branches\1.2\images.small\yandex.ico.gif" />
+    <Content Include="Archive\branches\1.2\images.small\yandex.ico.png" />
+    <Content Include="Archive\branches\1.2\images\openid-inputicon.gif" />
+    <Content Include="Archive\branches\1.2\images\openid-providers-en.png" />
+    <Content Include="Archive\branches\1.2\images\openid-providers-ru.png" />
+    <Content Include="Archive\branches\1.2\images\openid-providers-uk.png" />
+    <Content Include="Archive\branches\1.2\js\jquery-1.2.6.min.js" />
+    <Content Include="Archive\branches\1.2\js\openid-jquery-en.js" />
+    <Content Include="Archive\branches\1.2\js\openid-jquery-ru.js" />
+    <Content Include="Archive\branches\1.2\js\openid-jquery-uk.js" />
+    <Content Include="Archive\branches\1.2\js\openid-jquery.js" />
+    <Content Include="Archive\branches\1.2\README.txt" />
+    <Content Include="Archive\branches\1.3\css\openid-shadow.css" />
+    <Content Include="Archive\branches\1.3\css\openid.css" />
+    <Content Include="Archive\branches\1.3\demo-mootools.html" />
+    <Content Include="Archive\branches\1.3\demo-prototype.html" />
+    <Content Include="Archive\branches\1.3\demo-ru.html" />
+    <Content Include="Archive\branches\1.3\demo-uk.html" />
+    <Content Include="Archive\branches\1.3\demo.html" />
+    <Content Include="Archive\branches\1.3\generate-sprite.js" />
+    <Content Include="Archive\branches\1.3\images.large\aol.gif" />
+    <Content Include="Archive\branches\1.3\images.large\facebook.gif" />
+    <Content Include="Archive\branches\1.3\images.large\google.gif" />
+    <Content Include="Archive\branches\1.3\images.large\mailru.gif" />
+    <Content Include="Archive\branches\1.3\images.large\myopenid.gif" />
+    <Content Include="Archive\branches\1.3\images.large\openid.gif" />
+    <Content Include="Archive\branches\1.3\images.large\rambler.gif" />
+    <Content Include="Archive\branches\1.3\images.large\verisign.gif" />
+    <Content Include="Archive\branches\1.3\images.large\vkontakte.gif" />
+    <Content Include="Archive\branches\1.3\images.large\yahoo.gif" />
+    <Content Include="Archive\branches\1.3\images.large\yandex.gif" />
+    <Content Include="Archive\branches\1.3\images.small\aol.ico" />
+    <Content Include="Archive\branches\1.3\images.small\aol.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\aol.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\blogger.ico" />
+    <Content Include="Archive\branches\1.3\images.small\blogger.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\blogger.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\claimid.ico" />
+    <Content Include="Archive\branches\1.3\images.small\claimid.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\claimid.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\clickpass.ico" />
+    <Content Include="Archive\branches\1.3\images.small\clickpass.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\clickpass.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\facebook.ico" />
+    <Content Include="Archive\branches\1.3\images.small\facebook.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\facebook.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\flickr.ico" />
+    <Content Include="Archive\branches\1.3\images.small\flickr.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\flickr.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\google.ico" />
+    <Content Include="Archive\branches\1.3\images.small\google.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\google.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\google_profile.ico" />
+    <Content Include="Archive\branches\1.3\images.small\google_profile.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\google_profile.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\launchpad.ico" />
+    <Content Include="Archive\branches\1.3\images.small\launchpad.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\launchpad.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\linkedin.ico" />
+    <Content Include="Archive\branches\1.3\images.small\linkedin.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\linkedin.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\livejournal.ico" />
+    <Content Include="Archive\branches\1.3\images.small\livejournal.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\livejournal.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\mailru.ico" />
+    <Content Include="Archive\branches\1.3\images.small\mailru.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\mailru.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\myopenid.ico" />
+    <Content Include="Archive\branches\1.3\images.small\myopenid.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\myopenid.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\openid.ico" />
+    <Content Include="Archive\branches\1.3\images.small\openid.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\openid.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\rambler.ico" />
+    <Content Include="Archive\branches\1.3\images.small\rambler.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\rambler.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\technorati.ico" />
+    <Content Include="Archive\branches\1.3\images.small\technorati.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\technorati.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\twitter.ico" />
+    <Content Include="Archive\branches\1.3\images.small\twitter.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\twitter.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\verisign.ico" />
+    <Content Include="Archive\branches\1.3\images.small\verisign.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\verisign.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\vidoop.ico" />
+    <Content Include="Archive\branches\1.3\images.small\vidoop.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\vidoop.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\vkontakte.ico" />
+    <Content Include="Archive\branches\1.3\images.small\vkontakte.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\vkontakte.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\winliveid.ico" />
+    <Content Include="Archive\branches\1.3\images.small\winliveid.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\winliveid.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\wordpress.ico" />
+    <Content Include="Archive\branches\1.3\images.small\wordpress.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\wordpress.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\yahoo.ico" />
+    <Content Include="Archive\branches\1.3\images.small\yahoo.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\yahoo.ico.png" />
+    <Content Include="Archive\branches\1.3\images.small\yandex.ico" />
+    <Content Include="Archive\branches\1.3\images.small\yandex.ico.gif" />
+    <Content Include="Archive\branches\1.3\images.small\yandex.ico.png" />
+    <Content Include="Archive\branches\1.3\images\openid-inputicon.gif" />
+    <Content Include="Archive\branches\1.3\images\openid-providers-en.png" />
+    <Content Include="Archive\branches\1.3\images\openid-providers-ru.png" />
+    <Content Include="Archive\branches\1.3\js\jquery-1.2.6.min.js" />
+    <Content Include="Archive\branches\1.3\js\mootools-core.js" />
+    <Content Include="Archive\branches\1.3\js\mootools-more.js" />
+    <Content Include="Archive\branches\1.3\js\openid-de.js" />
+    <Content Include="Archive\branches\1.3\js\openid-en.js" />
+    <Content Include="Archive\branches\1.3\js\openid-jp.js" />
+    <Content Include="Archive\branches\1.3\js\openid-jquery.js" />
+    <Content Include="Archive\branches\1.3\js\openid-mootools.js" />
+    <Content Include="Archive\branches\1.3\js\openid-prototype.js" />
+    <Content Include="Archive\branches\1.3\js\openid-ru.js" />
+    <Content Include="Archive\branches\1.3\js\openid-uk.js" />
+    <Content Include="Archive\branches\1.3\js\prototype.js" />
+    <Content Include="Archive\branches\1.3\README.txt" />
+    <Content Include="Archive\branches\2.x\css\openid.css" />
+    <Content Include="Archive\branches\2.x\demo.html" />
+    <Content Include="Archive\branches\2.x\demoOpenIDClient.html" />
+    <Content Include="Archive\branches\2.x\images\aol.gif" />
+    <Content Include="Archive\branches\2.x\images\blogger.ico" />
+    <Content Include="Archive\branches\2.x\images\blogger.ico.gif" />
+    <Content Include="Archive\branches\2.x\images\claimid.ico" />
+    <Content Include="Archive\branches\2.x\images\claimid.ico.gif" />
+    <Content Include="Archive\branches\2.x\images\facebook.gif" />
+    <Content Include="Archive\branches\2.x\images\flickr.ico" />
+    <Content Include="Archive\branches\2.x\images\flickr.ico.gif" />
+    <Content Include="Archive\branches\2.x\images\google.gif" />
+    <Content Include="Archive\branches\2.x\images\launchpad.ico" />
+    <Content Include="Archive\branches\2.x\images\launchpad.ico.gif" />
+    <Content Include="Archive\branches\2.x\images\livejournal.ico" />
+    <Content Include="Archive\branches\2.x\images\livejournal.ico.gif" />
+    <Content Include="Archive\branches\2.x\images\myopenid.ico" />
+    <Content Include="Archive\branches\2.x\images\myopenid.ico.gif" />
+    <Content Include="Archive\branches\2.x\images\openid-inputicon.gif" />
+    <Content Include="Archive\branches\2.x\images\openid.gif" />
+    <Content Include="Archive\branches\2.x\images\technorati.ico" />
+    <Content Include="Archive\branches\2.x\images\technorati.ico.gif" />
+    <Content Include="Archive\branches\2.x\images\verisign.gif" />
+    <Content Include="Archive\branches\2.x\images\verisign.ico" />
+    <Content Include="Archive\branches\2.x\images\verisign.ico.gif" />
+    <Content Include="Archive\branches\2.x\images\vidoop.ico" />
+    <Content Include="Archive\branches\2.x\images\vidoop.ico.gif" />
+    <Content Include="Archive\branches\2.x\images\wordpress.ico" />
+    <Content Include="Archive\branches\2.x\images\wordpress.ico.gif" />
+    <Content Include="Archive\branches\2.x\images\yahoo.gif" />
+    <Content Include="Archive\branches\2.x\js\jquery-1.2.6.min.js" />
+    <Content Include="Archive\branches\2.x\js\openid-client\jquery.query-2.1.3.js" />
+    <Content Include="Archive\branches\2.x\js\openid-client\openid-client-config.js" />
+    <Content Include="Archive\branches\2.x\js\openid-client\openid-client.js" />
+    <Content Include="Archive\branches\2.x\js\openid-jquery.js" />
+    <Content Include="Archive\branches\2.x\openid-client\checkid_immediate_response.html" />
+    <Content Include="Archive\branches\2.x\openid-client\checkid_setup_response.html" />
+    <Content Include="css\openid-shadow.css" />
+    <Content Include="css\openid.css" />
+    <Content Include="Archive\tags\release-1.0\css\openid.css" />
+    <Content Include="Archive\tags\release-1.0\demo.html" />
+    <Content Include="Archive\tags\release-1.0\images\aol.gif" />
+    <Content Include="Archive\tags\release-1.0\images\blogger.ico" />
+    <Content Include="Archive\tags\release-1.0\images\claimid.ico" />
+    <Content Include="Archive\tags\release-1.0\images\facebook.gif" />
+    <Content Include="Archive\tags\release-1.0\images\flickr.ico" />
+    <Content Include="Archive\tags\release-1.0\images\google.gif" />
+    <Content Include="Archive\tags\release-1.0\images\livejournal.ico" />
+    <Content Include="Archive\tags\release-1.0\images\myopenid.ico" />
+    <Content Include="Archive\tags\release-1.0\images\openid-inputicon.gif" />
+    <Content Include="Archive\tags\release-1.0\images\openid.gif" />
+    <Content Include="Archive\tags\release-1.0\images\technorati.ico" />
+    <Content Include="Archive\tags\release-1.0\images\verisign.ico" />
+    <Content Include="Archive\tags\release-1.0\images\vidoop.ico" />
+    <Content Include="Archive\tags\release-1.0\images\wordpress.ico" />
+    <Content Include="Archive\tags\release-1.0\images\yahoo.gif" />
+    <Content Include="Archive\tags\release-1.0\js\jquery-1.2.6.min.js" />
+    <Content Include="Archive\tags\release-1.0\js\openid-jquery.js" />
+    <Content Include="index.html" />
+    <Content Include="demo-closure-compiled.html" />
+    <Content Include="demo-closure.html" />
+    <Content Include="demo-mootools.html" />
+    <Content Include="demo-no-framework.html" />
+    <Content Include="demo-prototype.html" />
+    <Content Include="demo-ru.html" />
+    <Content Include="demo-uk.html" />
+    <Content Include="demo-zh_CN.html" />
+    <Content Include="demo-zh_TW.html" />
+    <Content Include="demo.html" />
+    <Content Include="generate-sprite.js" />
+    <Content Include="images.large\aol.gif" />
+    <Content Include="images.large\facebook.gif" />
+    <Content Include="images.large\google.gif" />
+    <Content Include="images.large\mailru.gif" />
+    <Content Include="images.large\myopenid.gif" />
+    <Content Include="images.large\openid.gif" />
+    <Content Include="images.large\rambler.gif" />
+    <Content Include="images.large\verisign.gif" />
+    <Content Include="images.large\vkontakte.gif" />
+    <Content Include="images.large\yahoo.gif" />
+    <Content Include="images.large\yandex.gif" />
+    <Content Include="images.small\aol.ico" />
+    <Content Include="images.small\aol.ico.gif" />
+    <Content Include="images.small\aol.ico.png" />
+    <Content Include="images.small\blogger.ico" />
+    <Content Include="images.small\blogger.ico.gif" />
+    <Content Include="images.small\blogger.ico.png" />
+    <Content Include="images.small\claimid.ico" />
+    <Content Include="images.small\claimid.ico.gif" />
+    <Content Include="images.small\claimid.ico.png" />
+    <Content Include="images.small\clickpass.ico" />
+    <Content Include="images.small\clickpass.ico.gif" />
+    <Content Include="images.small\clickpass.ico.png" />
+    <Content Include="images.small\facebook.ico" />
+    <Content Include="images.small\facebook.ico.gif" />
+    <Content Include="images.small\facebook.ico.png" />
+    <Content Include="images.small\flickr.ico" />
+    <Content Include="images.small\flickr.ico.gif" />
+    <Content Include="images.small\flickr.ico.png" />
+    <Content Include="images.small\google.ico" />
+    <Content Include="images.small\google.ico.gif" />
+    <Content Include="images.small\google.ico.png" />
+    <Content Include="images.small\google_profile.ico" />
+    <Content Include="images.small\google_profile.ico.gif" />
+    <Content Include="images.small\google_profile.ico.png" />
+    <Content Include="images.small\launchpad.ico" />
+    <Content Include="images.small\launchpad.ico.gif" />
+    <Content Include="images.small\launchpad.ico.png" />
+    <Content Include="images.small\linkedin.ico" />
+    <Content Include="images.small\linkedin.ico.gif" />
+    <Content Include="images.small\linkedin.ico.png" />
+    <Content Include="images.small\livejournal.ico" />
+    <Content Include="images.small\livejournal.ico.gif" />
+    <Content Include="images.small\livejournal.ico.png" />
+    <Content Include="images.small\mailru.ico" />
+    <Content Include="images.small\mailru.ico.gif" />
+    <Content Include="images.small\mailru.ico.png" />
+    <Content Include="images.small\myopenid.ico" />
+    <Content Include="images.small\myopenid.ico.gif" />
+    <Content Include="images.small\myopenid.ico.png" />
+    <Content Include="images.small\openid.ico" />
+    <Content Include="images.small\openid.ico.gif" />
+    <Content Include="images.small\openid.ico.png" />
+    <Content Include="images.small\rambler.ico" />
+    <Content Include="images.small\rambler.ico.gif" />
+    <Content Include="images.small\rambler.ico.png" />
+    <Content Include="images.small\technorati.ico" />
+    <Content Include="images.small\technorati.ico.gif" />
+    <Content Include="images.small\technorati.ico.png" />
+    <Content Include="images.small\twitter.ico" />
+    <Content Include="images.small\twitter.ico.gif" />
+    <Content Include="images.small\twitter.ico.png" />
+    <Content Include="images.small\verisign.ico" />
+    <Content Include="images.small\verisign.ico.gif" />
+    <Content Include="images.small\verisign.ico.png" />
+    <Content Include="images.small\vidoop.ico" />
+    <Content Include="images.small\vidoop.ico.gif" />
+    <Content Include="images.small\vidoop.ico.png" />
+    <Content Include="images.small\vkontakte.ico" />
+    <Content Include="images.small\vkontakte.ico.gif" />
+    <Content Include="images.small\vkontakte.ico.png" />
+    <Content Include="images.small\winliveid.ico" />
+    <Content Include="images.small\winliveid.ico.gif" />
+    <Content Include="images.small\winliveid.ico.png" />
+    <Content Include="images.small\wordpress.ico" />
+    <Content Include="images.small\wordpress.ico.gif" />
+    <Content Include="images.small\wordpress.ico.png" />
+    <Content Include="images.small\yahoo.ico" />
+    <Content Include="images.small\yahoo.ico.gif" />
+    <Content Include="images.small\yahoo.ico.png" />
+    <Content Include="images.small\yandex.ico" />
+    <Content Include="images.small\yandex.ico.gif" />
+    <Content Include="images.small\yandex.ico.png" />
+    <Content Include="images\openid-inputicon.gif" />
+    <Content Include="images\openid-providers-en.png" />
+    <Content Include="images\openid-providers-ru.png" />
+    <Content Include="js\externs.js" />
+    <Content Include="js\jquery-1.2.6.min.js" />
+    <Content Include="js\mootools-core.js" />
+    <Content Include="js\mootools-more.js" />
+    <Content Include="js\openid-closure.js" />
+    <Content Include="js\openid-de.js" />
+    <Content Include="js\openid-en.js" />
+    <Content Include="js\openid-fr.js" />
+    <Content Include="js\openid-jp.js" />
+    <Content Include="js\openid-jquery.js" />
+    <Content Include="js\openid-mootools.js" />
+    <Content Include="js\openid-no-framework.js" />
+    <Content Include="js\openid-prototype.js" />
+    <Content Include="js\openid-ru.js" />
+    <Content Include="js\openid-uk.js" />
+    <Content Include="js\openid-vi.js" />
+    <Content Include="js\openid-zh_CN.js" />
+    <Content Include="js\openid-zh_TW.js" />
+    <Content Include="js\prototype.js" />
+    <Content Include="README.txt" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Archive\branches\1.3\generate-sprite.rb" />
+    <Content Include="Archive\branches\1.3\generate-sprite.sh" />
+    <Content Include="Archive\branches\1.3\remcomments.sed" />
+    <Content Include="compile-closure.sh" />
+    <Content Include="generate-sprite.rb" />
+    <Content Include="generate-sprite.sh" />
+    <Content Include="remcomments.sed" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Archive\wiki\FAQ.wiki" />
+    <Content Include="Archive\wiki\JavascriptOpenIDClient.wiki" />
+    <Content Include="Archive\wiki\StayingLoggedInBetweenPages.wiki" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50645</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50645/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
