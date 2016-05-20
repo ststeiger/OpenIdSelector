@@ -20,41 +20,101 @@ namespace ImageMagicSprite
                 System.Windows.Forms.Application.EnableVisualStyles();
                 System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
                 System.Windows.Forms.Application.Run(new Form1());
-            }
+            } // End if (bShowWindow) 
 
             LocalizeSprites();
-        }
+        } // End Sub Main 
+
+
+        public static string MapProjectPath(string path)
+        {
+            string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            dir = System.IO.Path.Combine(dir, "../../../");
+            dir = System.IO.Path.GetFullPath(dir);
+
+            if (path != null && path.StartsWith("~"))
+                dir = System.IO.Path.Combine(dir, path.Substring(1));
+            
+            // System.Console.WriteLine(dir);
+            return dir;
+        } // End Function MapProjectPath
 
 
         public static void LocalizeSprites()
         {
-            string strContent = System.IO.File.ReadAllText(@"d:\stefan.steiger\documents\visual studio 2013\Projects\OpenIdSelector\OpenIdSelector\js\openid-en.js", System.Text.Encoding.UTF8);
-            strContent = System.IO.File.ReadAllText(@"d:\stefan.steiger\documents\visual studio 2013\Projects\OpenIdSelector\OpenIdSelector\js\openid-de.js", System.Text.Encoding.UTF8);
-
+            string strContent = System.IO.File.ReadAllText(MapProjectPath("~OpenIdSelector/js/openid-de.js"), System.Text.Encoding.UTF8);
+            strContent = System.IO.File.ReadAllText(MapProjectPath("~OpenIdSelector/js/openid-en.js"), System.Text.Encoding.UTF8);
 
             cRootObject localizations = TrySerialize(strContent);
 
-            foreach (System.Collections.Generic.KeyValuePair<string, cProvider> provider in localizations.providers["providers_large"])
-            {
-                System.Console.WriteLine(provider.Key + ":");
-                System.Console.WriteLine(provider.Value.label);
-                System.Console.WriteLine(provider.Value.name);
-                System.Console.WriteLine(provider.Value.url);
-            }
+            int cntLarge = localizations.providers["providers_large"].Count;
+            int cntSmall = localizations.providers["providers_small"].Count;
 
-            
-            foreach (System.Collections.Generic.KeyValuePair<string, cProvider> provider in localizations.providers["providers_small"])
-            {
-                System.Console.WriteLine(provider.Key + ":");
-                System.Console.WriteLine(provider.Value.label);
-                System.Console.WriteLine(provider.Value.name);
-                System.Console.WriteLine(provider.Value.url);
-            }
-            
+            // 100x60
+            const int LARGE_PROVIDER_MAX_WIDTH = 100;
+            const int LARGE_PROVIDER_MAX_HEIGHT = 60;
 
+            // 16x16
+            const int SMALL_PROVIDER_MAX_WIDTH = 20;
+            const int SMALL_PROVIDER_MAX_HEIGHT = 20;
+
+            System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(
+                System.Math.Max(cntLarge * LARGE_PROVIDER_MAX_WIDTH, cntSmall * SMALL_PROVIDER_MAX_WIDTH)
+                , LARGE_PROVIDER_MAX_HEIGHT + SMALL_PROVIDER_MAX_HEIGHT);
+            
+            using (System.Drawing.Graphics g = System.Drawing.Graphics.FromImage(bmp))
+            {
+                g.Clear(System.Drawing.Color.HotPink);
+
+
+                int i = 0;
+                foreach (System.Collections.Generic.KeyValuePair<string, cProvider> provider in localizations.providers["providers_large"])
+                {
+                
+                    using (System.Drawing.Image img = System.Drawing.Image.FromFile(MapProjectPath("~OpenIdSelector/images.large/" + provider.Key + ".gif")))
+                    {
+                        g.DrawImageUnscaled(img, i * LARGE_PROVIDER_MAX_WIDTH + (LARGE_PROVIDER_MAX_WIDTH - img.Width) / 2, (LARGE_PROVIDER_MAX_HEIGHT - img.Height) / 2);
+                    } // End Using img
+
+                    using (System.Drawing.Image img = System.Drawing.Image.FromFile(MapProjectPath("~OpenIdSelector/images.small/" + provider.Key + ".ico.png")))
+                    {
+                        g.DrawImageUnscaled(img, i * SMALL_PROVIDER_MAX_WIDTH + (SMALL_PROVIDER_MAX_WIDTH - img.Width) / 2
+                        , LARGE_PROVIDER_MAX_HEIGHT + (SMALL_PROVIDER_MAX_HEIGHT - img.Height) / 2);
+                    } // End Using img
+
+                    System.Console.WriteLine(provider.Key + ":");
+                    System.Console.WriteLine(provider.Value.label);
+                    System.Console.WriteLine(provider.Value.name);
+                    System.Console.WriteLine(provider.Value.url);
+                    ++i;
+                } // Next provider 
+
+                // i = 0;
+                foreach (System.Collections.Generic.KeyValuePair<string, cProvider> provider in localizations.providers["providers_small"])
+                {
+
+                    using (System.Drawing.Image img = System.Drawing.Image.FromFile(MapProjectPath("~OpenIdSelector/images.small/" + provider.Key + ".ico.png")))
+                    {
+                        g.DrawImageUnscaled(img, i * SMALL_PROVIDER_MAX_WIDTH + (SMALL_PROVIDER_MAX_WIDTH - img.Width) / 2
+                        , LARGE_PROVIDER_MAX_HEIGHT + (SMALL_PROVIDER_MAX_HEIGHT - img.Height) / 2);
+                    } // End Using img
+
+                    System.Console.WriteLine(provider.Key + ":");
+                    System.Console.WriteLine(provider.Value.label);
+                    System.Console.WriteLine(provider.Value.name);
+                    System.Console.WriteLine(provider.Value.url);
+                    ++i;
+                } // Next provider 
+
+                bmp.MakeTransparent(System.Drawing.Color.HotPink);
+
+
+                string fn = MapProjectPath("~OpenIdSelector/images/openidfile.png");
+                bmp.Save(fn, System.Drawing.Imaging.ImageFormat.Png);
+            } // End Using g
 
             System.Console.WriteLine(localizations);
-        }
+        } // End Sub LocalizeSprites 
 
 
         static string RemoveCstyleComments(string strInput)
@@ -108,6 +168,7 @@ namespace ImageMagicSprite
 
             string[] localeConfigs = ma.Groups[0].Value.Replace("\r", "").Split(new char[] { '\n' }
                 , System.StringSplitOptions.RemoveEmptyEntries);
+
             for (int i = 0; i < localeConfigs.Length; ++i)
             {
                 int ind = localeConfigs[i].IndexOf("//");
@@ -120,27 +181,12 @@ namespace ImageMagicSprite
                         + localeConfigs[i].Substring(ind+1);
 
                 localeConfigs[i] = "," + localeConfigs[i].TrimStart().TrimEnd(new char[] { '\r', '\n', ' ', '\t', ';' }).Substring("openid.".Length);
-            }
+            } // Next i 
 
             string localeConfig = "\n,\"config\": {\n\"foo\": \"123\" \n" + string.Join("\n", localeConfigs) + "\n}\n";
 
             strInput = System.Text.RegularExpressions.Regex.Replace(strInput, strPattern, "", System.Text.RegularExpressions.RegexOptions.Singleline);
             strPattern = null;
-
-            /*
-            string[] astrTrailingComments = {
-                             @"openid\.locale"
-                            ,@"openid\.sprite"
-                            ,@"openid\.demo_text"
-                            ,@"openid\.signin_text"
-                            ,@"openid\.image_title"
-            };
-
-            foreach (string strThisPattern in astrTrailingComments)
-            {
-                strInput = System.Text.RegularExpressions.Regex.Replace(strInput, strThisPattern + ".+", "", System.Text.RegularExpressions.RegexOptions.Multiline);
-            } // Next strThisPattern
-            */
 
             strInput = "{\n\"providers\": {" + strInput + "}" + localeConfig + "\n}\n";
 

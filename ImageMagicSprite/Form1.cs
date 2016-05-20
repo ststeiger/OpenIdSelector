@@ -176,7 +176,7 @@ namespace ImageMagicSprite
         {
             //var shell = new ActiveXObject('WScript.Shell');
             System.Type t = System.Type.GetTypeFromProgID("WScript.Shell");
-            dynamic shell = System.Activator.CreateInstance(t);
+            // dynamic shell = System.Activator.CreateInstance(t);
 
             //var exec = shell.Exec(cmd);
             //while (exec.Status == 0)
