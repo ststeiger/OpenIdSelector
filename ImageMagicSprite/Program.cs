@@ -209,6 +209,7 @@ namespace ImageMagicSprite
             public System.Collections.Generic.Dictionary<string, cProvider> providers_small;
         }
 
+
         public class cConfig
         {
             public string foo;
@@ -218,6 +219,7 @@ namespace ImageMagicSprite
             public string signin_text;
             public string image_title;
         }
+
 
         public class cRootObject
         {
@@ -253,7 +255,7 @@ namespace ImageMagicSprite
         } // End Function TrySerialize
 
 
-    }
+    } // End Class Program 
 
 
-}
+} // End Namespace ImageMagicSprite 
